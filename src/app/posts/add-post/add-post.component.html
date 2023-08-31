@@ -1,0 +1,6 @@
+<form [formGroup]="postForm" xmlns="http://www.w3.org/1999/html">
+  <input type="text" pInputText formControlName="id"/>
+  <input type="text" pInputText  formControlName="title"/>
+  <textarea rows="5" cols="30" pInputTextarea formControlName="description"></textarea>
+  <p-button label="submit" (click)="addPost()"></p-button>
+</form>

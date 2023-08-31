@@ -1,4 +1,9 @@
 <div>
+  <p>{{ channelName$ | async }}</p>
   <input type="text" placeholder="enter a value" [(ngModel)]="value" />
   <p-button label="Add to counter" (click)="onAdd()"></p-button>
+</div>
+
+<div>
+  <p-button label="change" (click)="changeText()"></p-button>
 </div>

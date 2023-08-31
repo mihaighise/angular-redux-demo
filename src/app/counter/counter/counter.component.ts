@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-counter',
@@ -6,9 +7,13 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ['./counter.component.scss'],
 })
 export class CounterComponent implements OnInit {
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
+  }
+
+  async navigateToPosts() {
+    await this.router.navigateByUrl('posts');
   }
 }

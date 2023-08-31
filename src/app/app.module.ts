@@ -9,9 +9,16 @@ import { CounterButtonsComponent } from "./counter/counter-buttons/counter-butto
 import { ButtonModule } from "primeng/button";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { StoreModule } from "@ngrx/store";
-import { counterReducer } from "./counter/state/counter.reducer";
 import { CustomCounterInputComponent } from "./counter/custom-counter-input/custom-counter-input.component";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { PostsComponent } from "./posts/posts/posts.component";
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { environment } from "src/environments";
+import { appReducer } from "src/app/store/app.state";
+import { TableModule } from "primeng/table";
+import { AddPostComponent } from "./posts/add-post/add-post.component";
+import { InputTextModule } from "primeng/inputtext";
+import { InputTextareaModule } from "primeng/inputtextarea";
 
 @NgModule({
   declarations: [
@@ -20,14 +27,23 @@ import { FormsModule } from "@angular/forms";
     CounterOutputComponent,
     CounterButtonsComponent,
     CustomCounterInputComponent,
+    PostsComponent,
+    AddPostComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     ButtonModule,
-    StoreModule.forRoot({ counter: counterReducer }),
-    FormsModule
+    StoreModule.forRoot(appReducer),
+    StoreDevtoolsModule.instrument({
+      logOnly: environment.production
+    }),
+    FormsModule,
+    TableModule,
+    InputTextModule,
+    InputTextareaModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
