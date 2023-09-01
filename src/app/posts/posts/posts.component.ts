@@ -4,6 +4,7 @@ import { AppState } from "src/app/store/app.state";
 import { getPosts } from "src/app/posts/state/posts.selectors";
 import { Post } from "src/app/models/posts.model";
 import { Observable, Subject } from "rxjs";
+import { deletePost } from "src/app/posts/state/posts.actions";
 
 @Component({
   selector: 'app-posts',
@@ -24,5 +25,9 @@ export class PostsComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.notifier.next();
     this.notifier.complete();
+  }
+
+  deletePost(postId: string) {
+    this.store.dispatch(deletePost({id: postId}));
   }
 }

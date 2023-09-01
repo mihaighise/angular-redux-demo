@@ -19,6 +19,7 @@ import { TableModule } from "primeng/table";
 import { AddPostComponent } from "./posts/add-post/add-post.component";
 import { InputTextModule } from "primeng/inputtext";
 import { InputTextareaModule } from "primeng/inputtextarea";
+import { EditPostComponent } from "./posts/edit-post/edit-post.component";
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { InputTextareaModule } from "primeng/inputtextarea";
     CustomCounterInputComponent,
     PostsComponent,
     AddPostComponent,
+    EditPostComponent,
   ],
   imports: [
     BrowserModule,
